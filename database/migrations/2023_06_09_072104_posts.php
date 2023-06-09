@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class CreatePostsTable extends Migration
+class Posts extends Migration
 {
     /**
      * Run the migrations.
@@ -13,6 +13,7 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
+        //
         Schema::create('posts', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
             $table->integer('user_id');
@@ -29,6 +30,7 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
+        //
         Schema::dropIfExists('posts');
     }
 }
