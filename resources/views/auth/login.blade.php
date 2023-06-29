@@ -4,6 +4,8 @@
 <!-- 適切なURLを入力してください -->
 {!! Form::open(['url' => '/top']) !!}
 
+@csrf
+
 <p>AtlasSNSへようこそ</p>
 
 {{ Form::label('e-mail') }}

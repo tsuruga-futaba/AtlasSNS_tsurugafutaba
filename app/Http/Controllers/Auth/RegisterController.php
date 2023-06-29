@@ -6,6 +6,8 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
+use App\Http\Requests\RegisterFormRequest;
+use Illuminate\Support\Facades\Session;
 
 class RegisterController extends Controller
 {
@@ -39,12 +41,16 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    public function register(Request $request){
-        if($request->isMethod('post')){
-
+    //バリデーション成功、通過後の値を$requestにいれていく
+    public function register(RegisterFormRequest $request)
+    {
             $username = $request->input('username');
             $mail = $request->input('mail');
             $password = $request->input('password');
+            // dd($username);
+
+            //セッション　値を保存
+            $request->session()->put('name', $username);
 
             User::create([
                 'username' => $username,
@@ -52,12 +58,27 @@ class RegisterController extends Controller
                 'password' => bcrypt($password),
             ]);
 
+
+
+
             return redirect('added');
-        }
+
+            //$validated = $request->validated();
+    }
+
+    //get送信の時（ログイン画面から登録画面へ遷移するとき）の処理
+    //ルーティングもメソッド名変更しているか必ず確認！
+    public function registerView()
+    {
         return view('auth.register');
     }
 
+
     public function added(){
+
         return view('auth.added');
+        //echo $request->session()->get('name');
     }
+
+    //public function
 }
