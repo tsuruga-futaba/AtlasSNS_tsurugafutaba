@@ -37,7 +37,8 @@ Route::group(['middleware' => 'guest'], function () {
 //postに変更
 
 Route::group(['middleware' => 'auth'], function () {
-  Route::get('/top', 'PostsController@index');
+  //Route::get('/top', 'PostsController@index');
+  Route::post('/top', 'PostsController@index');
   Route::get('/profile', 'UsersController@profile');
 
   Route::get('/search', 'UsersController@index');
