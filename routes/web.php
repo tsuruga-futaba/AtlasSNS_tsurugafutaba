@@ -23,22 +23,26 @@
 
 use App\Http\Middleware\MyMiddleware;
 
-Route::get('/login', 'Auth\LoginController@login');
-Route::post('/login', 'Auth\LoginController@login');
+Route::group(['middleware' => 'guest'], function () {
+  Route::get('/login', 'Auth\LoginController@login')-> name('login');
+  Route::post('/login', 'Auth\LoginController@login');
 
-Route::get('/register', 'Auth\RegisterController@registerView');
-Route::post('/register', 'Auth\RegisterController@register');
+  Route::get('/register', 'Auth\RegisterController@registerView');
+  Route::post('/register', 'Auth\RegisterController@register');
 
-Route::get('/added', 'Auth\RegisterController@added');
-Route::post('/added', 'Auth\RegisterController@added');
-
+  Route::get('/added', 'Auth\RegisterController@added');
+  Route::post('/added', 'Auth\RegisterController@added');
+});
 //ログイン中のページ
 //postに変更
-Route::post('/top','PostsController@index')->middleware('auth');
 
-Route::get('/profile','UsersController@profile')->middleware('auth');
+Route::group(['middleware' => 'auth'], function () {
+  Route::get('/top', 'PostsController@index');
+  Route::get('/profile', 'UsersController@profile');
 
-Route::get('/search','UsersController@index')->middleware('auth');
+  Route::get('/search', 'UsersController@index');
 
-Route::get('/follow-list','PostsController@index')->middleware('auth');
-Route::get('/follower-list','PostsController@index')->middleware('auth');
+  Route::get('/follow-list','PostsController@index');
+  Route::get('/follower-list', 'PostsController@index');
+
+ });
