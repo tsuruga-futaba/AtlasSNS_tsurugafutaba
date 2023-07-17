@@ -37,13 +37,18 @@ Route::group(['middleware' => 'guest'], function () {
 //postに変更
 
 Route::group(['middleware' => 'auth'], function () {
-  //Route::get('/top', 'PostsController@index');
-  Route::post('/top', 'PostsController@index');
+  Route::get('/top', 'PostsController@index');
+  Route::post('/top', 'PostsController@postCreate');
+  Route::post('/post/update', 'PostsController@postUpdate');
   Route::get('/profile', 'UsersController@profile');
 
-  Route::get('/search', 'UsersController@index');
+  Route::get('/search', 'UsersController@search');
 
   Route::get('/follow-list','PostsController@index');
   Route::get('/follower-list', 'PostsController@index');
 
+  Route::post('/post_create','PostsController@postCreate');
  });
+
+ //ログアウト機能
+Route::get('/logout', 'Auth\LoginController@logout');

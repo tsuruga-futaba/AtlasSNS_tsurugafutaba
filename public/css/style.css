@@ -1,22 +1,178 @@
 @charset "utf-8";
-html{
-}
-body{
-}
+
+/*html {}*/
+
+/*body {
+    width: 100px;
+        height: 100px;
+        background-color: #4773ff;
+        margin: 0 auto;
+}*/
+
 /* header */
-header{
-    background:#186AC9;
+header {
+    background: #0067C6;
+}
+
+#head {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 0, 100px;
 }
 
 /* main content */
-#row{
+#row {
     display: flex;
     flex-flow: row wrap;
+
 }
-#container{
+
+#container {
     flex: 0 0 80%;
 }
-#side-bar{
+
+#side-bar {
     flex: 0 0 19%;
     border-left: 1px solid #727272;
+    margin: 0 0 0 auto;
 }
+
+.user_name {
+    color: #fff;
+}
+
+/* ログインページ */
+/* .welcome-container {
+    width: 100px;
+    height: 100px;
+    background-color: #4773ff;
+    margin: 0 auto;
+} */
+
+/* .welcome {
+    height: 100vh;
+    background-color: #D9AFD9;
+    background-image: linear-gradient(0deg, #FEE32D 0%, #3796ED 100%);
+}
+
+.atlas {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    margin: 0 auto;
+} */
+
+/* トップヘッダー */
+.atlas_logo img {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+}
+
+/* アコーディオンメニュー  */
+
+.accordion-contents {
+    padding: 10px;
+    display: none;
+    padding: 10px;
+}
+
+.side_user {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: right;
+}
+
+.accordion-title {
+    display: flex;
+    position: absolute;
+    font-size: 1.25rem;
+    font-weight: normal;
+    color: #fff;
+    width: 50px;
+    height: 17px;
+    padding-left: 50px;
+}
+
+
+.accordion-title {
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+/* 矢印 */
+.accordion-title {
+    position: relative;
+}
+
+.accordion-title::after {
+    border-right: solid 2px #fff;
+    border-top: solid 2px #fff;
+    content: "";
+    display: block;
+    height: 8px;
+    position: absolute;
+    right: 25px;
+    top: 38%;
+    transform: rotate(135deg);
+    transition: transform .3s ease-in-out, top .3s ease-in-out;
+    width: 8px;
+}
+
+.accordion-title.open::after {
+    top: 45%;
+    transform: rotate(-45deg);
+}
+
+/*矢印ここまで*/
+
+
+/* バリデーションエラー */
+.post_error {
+    color: red;
+}
+
+/* 投稿フォーム */
+.post-form {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.post-form .icon {
+    position: absolute;
+    top: 70px;
+    left: 10px;
+}
+
+.post-form input {
+
+    position: absolute;
+    top: 70px;
+    left: 90px;
+    width: 400px;
+    height: 100px;
+    border: none;
+    vertical-align: top;
+}
+
+.submit_btn img {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 150px;
+    left: 490px;
+    z-index: 1;
+}
+
+/* .submit_btn {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 150px;
+    left: 490px;
+    z-index: 3; */

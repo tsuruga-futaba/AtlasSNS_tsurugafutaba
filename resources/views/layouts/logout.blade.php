@@ -8,6 +8,7 @@
   <title></title>
   <link rel="stylesheet" href="{{ asset('css/reset.css') }} ">
   <link rel="stylesheet" href="{{ asset('css/logout.css') }} ">
+<link rel="stylesheet" href="{{ asset('css/style.css') }} ">
   <!--スマホ,タブレット対応-->
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <!--サイトのアイコン指定-->
@@ -18,11 +19,12 @@
   <!--iphoneのアプリアイコン指定-->
   <link rel="apple-touch-icon-precomposed" href="画像のURL" />
   <!--OGPタグ/twitterカード-->
+
 </head>
 <body>
-  <header>
-    <h1><img src="images/atlas.png"></h1>
-    <p>Social Network Service</p>
+  <header class=atlas>
+    <h1 class=atlas-logo><img src="images/atlas.png"></h1>
+    <p class=atlas-text>Social Network Service</p>
   </header>
   <div id="container">
     @yield('content')

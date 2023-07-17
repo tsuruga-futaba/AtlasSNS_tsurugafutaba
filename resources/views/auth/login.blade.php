@@ -1,8 +1,10 @@
+<!-- <section class=welcome > -->
 @extends('layouts.logout')
 
 @section('content')
 <!-- 適切なURLを入力してください -->
-{!! Form::open(['url' => '/top']) !!}
+<div class=welcome-container>
+{!! Form::open(['url' => '/login', 'method' => 'post']) !!}
 
 @csrf
 
@@ -19,4 +21,8 @@
 
 {!! Form::close() !!}
 
+</div>
+
 @endsection
+
+<!-- </section> -->
