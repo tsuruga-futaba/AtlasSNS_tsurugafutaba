@@ -4,14 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\User;
 use App\Post;
 use App\Http\Requests\PostRequest;
 class PostsController extends Controller
 {
     //
     public function index(){
-        $list = Post::get();
-        return view('posts.index',['post'=>$list]);
+        $list = Post::orderBy('created_at','desc')->get();
+        return view('posts.index',['list'=>$list]);
+        // $list = Auth::user();
+
 
     }
     public function postCreate(PostRequest $request)
