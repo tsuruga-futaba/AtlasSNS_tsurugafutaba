@@ -32,7 +32,10 @@ class PostsController extends Controller
     {
         $id = $request->input('id');
         $up_post = $request->input('upPost');
-        Post::where('id',$id)->update(['post'=>$up_post]);
+        dd($up_post);
+        Post::where('id',$id)->update
+        (['post'=>$up_post]);
+
         return redirect('/top');
     }
 }
