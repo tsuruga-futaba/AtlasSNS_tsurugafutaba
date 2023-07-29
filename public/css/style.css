@@ -212,3 +212,36 @@ header {
     transform: translate(-50%, -50%);
     width: 60%;
 }
+
+.btn-danger {
+    cursor: pointer;
+    height: 200px;
+    margin-inline: auto;
+    margin-top: 20px;
+    position: relative;
+    width: 200px;
+}
+
+/* 画像のスタイル */
+.btn-danger img {
+    height: auto;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+/* 2枚目の画像は最初透明 */
+.btn-danger img:last-of-type {
+    opacity: 0;
+    transition: opacity .7s;
+}
+
+/* hoverすると2枚目の画像が透明じゃなくなる */
+.btn-danger:hover img :last-of-type {
+    opacity: 1;
+}
+
+.btn-danger:hover img:first-of-type {
+    opacity: 0;
+    transition: opacity .7s;
+}

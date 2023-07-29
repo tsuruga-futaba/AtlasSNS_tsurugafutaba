@@ -40,9 +40,12 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('/top', 'PostsController@index');
   Route::post('/top', 'PostsController@postCreate');
   Route::post('/post/update', 'PostsController@postUpdate');
+  Route::get('/post/{id}/delete', 'PostsController@postDelete');
   Route::get('/profile', 'UsersController@profile');
 
+
   Route::get('/search', 'UsersController@search');
+  Route::post('/search', 'UsersController@searchView');
 
   Route::get('/follow-list','PostsController@index');
   Route::get('/follower-list', 'PostsController@index');

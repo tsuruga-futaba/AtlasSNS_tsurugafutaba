@@ -31,4 +31,11 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Post');
     }
+
+    // フォロー機能の実装
+    public function Users(){
+        return $this->belongsToMany('App\Follow');
+    }
+
+
 }

@@ -32,6 +32,8 @@
 <table class="table table-hover">
   <tr>
     <td>{{$list ->user ->username }}</td>
+     <td class="icon"><img src="images/icon1.png"></td>
+    <!-- <td>{{$list ->user ->images}}</td> -->
     <td>{{$list ->post}}</td>
     <td>{{$list ->created_at}}</td>
     <!-- 更新用 -->
@@ -40,7 +42,7 @@
     </div></td>
     <!-- 消去用 -->
     <td><a class="btn btn-danger" href="/post/{{$list->id}}/delete" onclick="return confirm(
-      'この投稿を削除します。よろしいですか？')"><img src="./images/trash.png" alt="消去"></a></td>
+      'この投稿を削除します。よろしいですか？')"><img src="./images/trash-h.png" alt="消去1"><img src="./images/trash.png" alt="消去2"></a></td>
   </tr>
   @endforeach
 </table>
