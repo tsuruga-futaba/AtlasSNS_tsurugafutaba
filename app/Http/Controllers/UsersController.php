@@ -14,11 +14,8 @@ class UsersController extends Controller
      // ユーザー一覧をページネートで取得
     public function search(){
         $users = User::paginate(20);
-
         // ビューにusersとsearchを変数として渡す
         return view('users.search')->with(['users=>$users']);
-    //    $data= User::orderBy('username')->get();
-    //     return view('users.search', ['data' => $data]);
     }
     // ユーザー検索の処理を実装する
     public function searchView(Request $request)
