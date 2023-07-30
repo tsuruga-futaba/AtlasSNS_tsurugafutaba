@@ -21,10 +21,15 @@
   <table class="table table-hover">
     @foreach($users as $user)
     <!-- 自分以外のユーザーを表示 -->
-    @if(!($user->username ))
+    @if(isset($user)and!(Auth::user()==$user))
     <tr>
-      <td>{{$user->username}}</td>
       <td><img src="{{$user->images}}" alt="ユーザーアイコン"></td>
+      <td>{{$user->username}}</td>
+    </tr>
+    @elseif(isset($user)and!(Auth::user()==$user)and(isset($keyword)))
+    <tr>
+      <td><img src="{{ $data->appends(Request::only('keyword'))->images}}" alt="ユーザーアイコン"></td>
+      <td> {{ $data->appends(Request::only('keyword'))}}</td>
     </tr>
     @endif
     @endforeach

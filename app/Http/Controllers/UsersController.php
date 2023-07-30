@@ -15,13 +15,15 @@ class UsersController extends Controller
     public function search(){
         $users = User::paginate(20);
         // ビューにusersとsearchを変数として渡す
-        return view('users.search')->with(['users=>$users']);
+        return view('users.search')->with('users',$users);
     }
     // ユーザー検索の処理を実装する
     public function searchView(Request $request)
     {
+        $users = User::paginate(20);
         $keyword = $request->input('keyword');
         $query = User::query();
+        //  dd($query);
 
         // dd($username);
         if(!empty($keyword)){
@@ -30,7 +32,7 @@ class UsersController extends Controller
 
         // 全件取得＋ページネーション
             $data=$query->orderBy('created_at', 'desc')->paginate(5);
-            return view('users.search')->with('data',$data)->with('keyword',$keyword);
-
+            //   dd($data);
+            return view('users.search')->with('data',$data)->with('keyword',$keyword)->with('users',$users)->with('query,$query');
         }
     }
