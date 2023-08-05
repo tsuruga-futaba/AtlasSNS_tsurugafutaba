@@ -32,7 +32,7 @@ class UsersController extends Controller
 
         // 全件取得＋ページネーション
             $data=$query->orderBy('created_at', 'desc')->paginate(5);
-            //   dd($data);
+            //    dd($data);
             return view('users.search')->with('data',$data)->with('keyword',$keyword)->with('users',$users)->with('query,$query');
         }
     }

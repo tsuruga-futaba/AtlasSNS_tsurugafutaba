@@ -21,7 +21,7 @@
   <table class="table table-hover">
     @foreach($users as $user)
     <!-- 自分以外のユーザーを表示 -->
-    @if(isset($user)and!(Auth::user()==$user))
+    @if(isset($user)and!(Auth::user()==$user)and!(isset($keyword)))
     <tr>
       <td><img src="{{$user->images}}" alt="ユーザーアイコン"></td>
       <td>{{$user->username}}</td>
