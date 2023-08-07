@@ -21,15 +21,17 @@
   <table class="table table-hover">
     @foreach($users as $user)
     <!-- 自分以外のユーザーを表示 -->
-    @if(isset($user)and!(Auth::user()==$user)and!(isset($keyword)))
+    @if(!(Auth::user()==$user))
     <tr>
       <td><img src="{{$user->images}}" alt="ユーザーアイコン"></td>
       <td>{{$user->username}}</td>
-    </tr>
-    @elseif(isset($user)and!(Auth::user()==$user)and(isset($keyword)))
-    <tr>
-      <td><img src="{{ $data->appends(Request::only('keyword'))->images}}" alt="ユーザーアイコン"></td>
-      <td> {{ $data->appends(Request::only('keyword'))}}</td>
+      <td>
+        @if(auth()->user()->isFollowing($user->id))
+      <a href="{{route('un-follow',['user_id'=> $user->id])}}" class="btn un-follow_btn">フォロー解除</a>
+      @else
+      <a href="{{route('follow',['user_id'=> $user->id])}}" class="btn follow_btn">フォローする</a>
+      @endif
+      </td>
     </tr>
     @endif
     @endforeach

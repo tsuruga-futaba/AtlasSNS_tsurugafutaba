@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'mail', 'password',
+        'username', 'mail', 'password','following_id','followed_id',
     ];
 
     /**
@@ -33,8 +33,18 @@ class User extends Authenticatable
     }
 
     // フォロー機能の実装
-    public function Users(){
-        return $this->belongsToMany('App\Follow');
+    public function follows()
+    {
+        return $this->belongsToMany('App\User','follows','following_id','followed_id');
+    }
+    public function follower()
+    {
+        return $this->belongsToMany('App\User', 'follows', 'followed_id', 'following_id');
+    }
+    //フォローしているか
+    public function isFollowing(Int $user_id)
+    {
+        return (bool) $this->follows()->where('followed_id', $user_id)->first();
     }
 
 

@@ -47,11 +47,14 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('/search', 'UsersController@search');
   Route::post('/search', 'UsersController@searchView');
 
-  Route::get('/follow-list','PostsController@index');
-  Route::get('/follower-list', 'PostsController@index');
+  Route::get('/follow-list','FollowsController@followList');
+  Route::get('/follower-list', 'FollowsController@followerList');
+  Route::get('/un-follow/{user_id}', 'FollowsController@unFollow')->name('un-follow');
+  Route::get('/follow/{user_id}', 'FollowsController@follow')->name('follow');//bladeでrouteを使用するときはname
 
   Route::post('/post_create','PostsController@postCreate');
  });
+
 
  //ログアウト機能
 Route::get('/logout', 'Auth\LoginController@logout');

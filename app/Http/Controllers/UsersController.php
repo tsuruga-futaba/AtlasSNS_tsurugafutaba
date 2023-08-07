@@ -26,13 +26,14 @@ class UsersController extends Controller
         //  dd($query);
 
         // dd($username);
-        if(!empty($keyword)){
-            $query -> orwhere('username', 'like', '%' . $keyword . '%')->get();
+        if (!empty($keyword)) { //keywordが入っているとき
+            $users = $query->orwhere('username', 'like', '%' . $keyword . '%')->get(); //キーワードを含むユーザー名を取得する
+            // ddd($users);
+            return view('users.search')->with('keyword', $keyword)->with('users', $users);
+        }else{
+            $data=$query->orderBy('created_at', 'desc')->paginate(5); // 全件取得＋ページネーション
+            return view('users.search')->with('data',$data)->with('keyword',$keyword)->with('users',$users)->with('query',$query);
         }
-
-        // 全件取得＋ページネーション
-            $data=$query->orderBy('created_at', 'desc')->paginate(5);
             //    dd($data);
-            return view('users.search')->with('data',$data)->with('keyword',$keyword)->with('users',$users)->with('query,$query');
         }
     }
