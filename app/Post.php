@@ -8,10 +8,10 @@ class Post extends Model
 {
     protected $fillable = [
         'post',
-        'user_id'
+        'user_id',
     ];
 
-    public function User()
+    public function user()
     {
         return $this->belongsTo('App\User');
     }

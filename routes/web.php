@@ -37,22 +37,31 @@ Route::group(['middleware' => 'guest'], function () {
 //postに変更
 
 Route::group(['middleware' => 'auth'], function () {
+  //トップページ
   Route::get('/top', 'PostsController@index');
   Route::post('/top', 'PostsController@postCreate');
+
+  //投稿機能
   Route::post('/post/update', 'PostsController@postUpdate');
   Route::get('/post/{id}/delete', 'PostsController@postDelete');
+  Route::post('/post_create','PostsController@postCreate');
+
+  //プロフィール
   Route::get('/profile', 'UsersController@profile');
 
-
+  //検索
   Route::get('/search', 'UsersController@search');
   Route::post('/search', 'UsersController@searchView');
 
+  //フォローリスト
   Route::get('/follow-list','FollowsController@followList');
-  Route::get('/follower-list', 'FollowsController@followerList');
-  Route::get('/un-follow/{user_id}', 'FollowsController@unFollow')->name('un-follow');
-  Route::get('/follow/{user_id}', 'FollowsController@follow')->name('follow');//bladeでrouteを使用するときはname
+  //フォロワーリスト
+  Route::get('/follower-list/{user_id}', 'FollowsController@followerList');
 
-  Route::post('/post_create','PostsController@postCreate');
+  //フォロー解除
+  Route::get('/un-follow/{user_id}', 'FollowsController@unFollow')->name('un-follow');
+  //フォロー
+  Route::get('/follow/{user_id}', 'FollowsController@follow')->name('follow');//bladeでrouteを使用するときはname
  });
 
 

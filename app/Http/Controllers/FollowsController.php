@@ -5,11 +5,25 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Follow;
 use App\User;
+use App\Post;
+use Auth;
+use FollowsTableSeeder;
+
 class FollowsController extends Controller
 {
     //
     public function followList(){
-        return view('follows.followList');
+        //Postモデル経由でpostsデーブルのレコードを取得
+        $posts = Post::get();
+        // $users = User::paginate(20);
+        // $follower = auth()->user();
+        //フォローしているユーザーのidを取得
+        $following_id = Auth::user()->follows->pluck('followed_id');
+         dd($following_id);
+        //フォローしているユーザーのidを元に投稿内容を取得
+        $posts = Post::with('user')->whereIn('users.id', $following_id)->get();
+        // dd($posts);
+        return view('follows.followList', compact('posts'))->with('posts',$posts);
     }
     public function followerList(){
         return view('follows.followerList');
@@ -25,9 +39,11 @@ class FollowsController extends Controller
             //自分のユーザーIDを取得する
            $loggedInUserId = auth()->user()->id;
             //フォローの解除（フォローテーブルから削除）
+            // dd($user_id);
+            // dd($loggedInUserId);
             Follow::where([
-                ['followed_id', '=', '$user_id'],
-                ['following_id', '=', '$loggedInUserId'],
+                ['followed_id', $user_id],
+                ['following_id',$loggedInUserId],
             ])
                 ->delete();
         }
