@@ -11,24 +11,25 @@ use FollowsTableSeeder;
 
 class FollowsController extends Controller
 {
-    //
     public function followList(){
-        //Postモデル経由でpostsデーブルのレコードを取得
-        $posts = Post::get();
-        // $users = User::paginate(20);
-        // $follower = auth()->user();
         //フォローしているユーザーのidを取得
-        $following_id = Auth::user()->follows->pluck('followed_id');
-         dd($following_id);
+        $following_id = Auth::user()->follows()->pluck('followed_id');
+        //   dd($following_id);
         //フォローしているユーザーのidを元に投稿内容を取得
-        $posts = Post::with('user')->whereIn('users.id', $following_id)->get();
+        $posts = Post::with('user')->whereIn('posts.user_id', $following_id)->get();
         // dd($posts);
         return view('follows.followList', compact('posts'))->with('posts',$posts);
     }
     public function followerList(){
-        return view('follows.followerList');
+        //フォローされているユーザーのidを取得
+        $followed_id = Auth::user()->follower()->pluck('following_id');
+        //    dd($followed_id);
+        //フォローされているユーザーのidを元に投稿内容を取得
+        $posts = Post::with('user')->whereIn('posts.user_id', $followed_id)->get();
+        // dd($posts);
+        return view('follows.followerList', compact('posts'))->with('posts',$posts);
     }
-    public function unFollow($user_id)
+    public function unFollow( $user_id)
     {
         //フォローしているか
         $follower = auth()->user();

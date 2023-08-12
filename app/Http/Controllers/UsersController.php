@@ -8,8 +8,11 @@ use App\User;
 class UsersController extends Controller
 {
     //
-    public function profile(){
-        return view('users.profile');
+    public function profile(Int $user_id){
+        //リンク元のidを元にユーザー情報を取得
+        $users = User::whereIn('users.id', $user_id)->first();
+        dd($users);
+        return view('users.profile')->with('users'.$users);
     }
      // ユーザー一覧をページネートで取得
     public function search(){

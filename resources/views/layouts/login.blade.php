@@ -30,7 +30,7 @@
     <header>
         <div id = "head">
             <!--ロゴにトップページへ遷移するリンクの設置-->
-        <h1 class="atlas_logo"><a href="/top"><img src="images/atlas.png"></a></h1>
+        <h1 class="atlas_logo"><a href="{{asset('/top')}}"><img src="images/atlas.png"></a></h1>
 
             <div class="side_user">
                  <!--アコーディオンメニューの設置-->

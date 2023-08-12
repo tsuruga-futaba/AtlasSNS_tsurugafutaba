@@ -47,7 +47,7 @@ Route::group(['middleware' => 'auth'], function () {
   Route::post('/post_create','PostsController@postCreate');
 
   //プロフィール
-  Route::get('/profile', 'UsersController@profile');
+  Route::get('/profile/{user_id}', 'UsersController@profile')->name('profile');
 
   //検索
   Route::get('/search', 'UsersController@search');
@@ -56,7 +56,7 @@ Route::group(['middleware' => 'auth'], function () {
   //フォローリスト
   Route::get('/follow-list','FollowsController@followList');
   //フォロワーリスト
-  Route::get('/follower-list/{user_id}', 'FollowsController@followerList');
+  Route::get('/follower-list', 'FollowsController@followerList');
 
   //フォロー解除
   Route::get('/un-follow/{user_id}', 'FollowsController@unFollow')->name('un-follow');
