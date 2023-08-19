@@ -42,7 +42,7 @@
                     <div class="accordion-contents">
                 <ul >
                     <li><a class="home" href="/top">ホーム</a></li>
-                    <li><a class="profile" href="/profile">プロフィール</a></li>
+                    <li><a class="profile" href="{{route('profile',['user_id'=> auth()->id()])}}">プロフィール</a></li>
                     <li><a class="center" href="/logout">ログアウト</a></li>
                 </ul>
                      </div>

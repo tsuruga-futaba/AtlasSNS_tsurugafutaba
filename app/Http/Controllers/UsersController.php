@@ -4,15 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Post;
 
 class UsersController extends Controller
 {
     //
     public function profile(Int $user_id){
         //リンク元のidを元にユーザー情報を取得
-        $users = User::whereIn('users.id', $user_id)->first();
-        dd($users);
-        return view('users.profile')->with('users'.$users);
+        $users = User::where('users.id', $user_id)->first();
+        // dd($users);
+        //リンク元ユーザーのidを元に投稿内容を取得
+        $posts = Post::with('user')->whereIn('posts.user_id', [$user_id])->get();
+        // dd($posts);
+        return  redirect()->route('profile',['user_id'=>$user_id])->with('users',$users)->with('posts',$posts);
     }
      // ユーザー一覧をページネートで取得
     public function search(){

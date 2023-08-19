@@ -72,4 +72,52 @@ class FollowsController extends Controller
 
         }
     }
+     public function unFollowPro( $user_id)
+    {
+        //フォローしているか
+        $follower = auth()->user();
+        $is_following = $follower->isFollowing($user_id);
+        $users = User::where('users.id', $user_id)->first();
+        // dd($users);
+        // dd($is_following);
+
+        //フォローしていれば下記のフォロー解除を実行する
+        if($is_following){
+            //自分のユーザーIDを取得する
+           $loggedInUserId = auth()->user()->id;
+            //フォローの解除（フォローテーブルから削除）
+            // dd($user_id);
+            // dd($loggedInUserId);
+            Follow::where([
+                ['followed_id', $user_id],
+                ['following_id',$loggedInUserId],
+            ])
+                ->delete();
+        }
+        //戻る
+        return redirect()->route('profile',['user_id'=>$user_id])->with('users',$users);
+    }
+    public function followPro($user_id)
+    {
+        //フォローしているか
+        $follower = auth()->user();
+        $is_following = $follower->isFollowing($user_id);
+        $users = User::where('users.id', $user_id)->first();
+         // dd($users);
+        //  dd($is_following);
+        //フォローしていなかったら下記のフォロー処理を実行
+        if(!$is_following){
+            //自分のユーザーIDを取得
+            $loggedInUserId = auth()->user()->id;
+            //フォローしたい人のユーザーIDを元にユーザーを取得
+            $followedUser = User::find($user_id);
+            $followedUserId =$followedUser->id;
+
+            Follow::create([
+                'following_id' => $loggedInUserId,
+                'followed_id' => $followedUserId,
+            ]);
+          return redirect()->route('profile',['user_id'=>$user_id])->with('users',$users);
+        }
+    }
 }

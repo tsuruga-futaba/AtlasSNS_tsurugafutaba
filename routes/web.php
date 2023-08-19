@@ -60,8 +60,11 @@ Route::group(['middleware' => 'auth'], function () {
 
   //フォロー解除
   Route::get('/un-follow/{user_id}', 'FollowsController@unFollow')->name('un-follow');
+  Route::get('/un-follow-pro/{user_id}', 'FollowsController@unFollowPro')->name('un-follow-pro');
+
   //フォロー
   Route::get('/follow/{user_id}', 'FollowsController@follow')->name('follow');//bladeでrouteを使用するときはname
+  Route::get('/follow-pro/{user_id}', 'FollowsController@followPro')->name('follow-pro');//bladeでrouteを使用するときはname
  });
 
 
