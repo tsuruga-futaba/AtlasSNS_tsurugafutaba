@@ -30,7 +30,7 @@
     <header>
         <div id = "head">
             <!--ロゴにトップページへ遷移するリンクの設置-->
-        <h1 class="atlas_logo"><a href="{{asset('/top')}}"><img src="images/atlas.png"></a></h1>
+        <h1 class="atlas_logo"><a href='/top'><img src="{{asset('/images/atlas.png')}}"></a></h1>
 
             <div class="side_user">
                  <!--アコーディオンメニューの設置-->
@@ -42,12 +42,12 @@
                     <div class="accordion-contents">
                 <ul >
                     <li><a class="home" href="/top">ホーム</a></li>
-                    <li><a class="profile" href="{{route('profile',['user_id'=> auth()->id()])}}">プロフィール</a></li>
+                    <li><a class="profile" href="/profile_edit">プロフィール編集</a></li>
                     <li><a class="center" href="/logout">ログアウト</a></li>
                 </ul>
                      </div>
                   <div class="icon">
-                    <img src="images/icon1.png">
+                    <a class="profile" href="{{route('profile',['user_id'=> auth()->id()])}}"><img src="images/icon1.png"></a>
                   </div>
 
              </div>

@@ -48,6 +48,9 @@ Route::group(['middleware' => 'auth'], function () {
 
   //プロフィール
   Route::get('/profile/{user_id}', 'UsersController@profile')->name('profile');
+  //プロフィール編集画面
+  Route::get('/profile_edit', 'usersController@profileEditView')->name('profile_edit');
+  Route::post('/profile_edit', 'UsersController@profileEdit')->name('profile_edit');
 
   //検索
   Route::get('/search', 'UsersController@search');
