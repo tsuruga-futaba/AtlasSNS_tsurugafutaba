@@ -23,7 +23,7 @@
     <!-- 自分以外のユーザーを表示 -->
     @if(!(Auth::user()==$user))
     <tr>
-      <td><img src="{{$user->images}}" alt="ユーザーアイコン"></td>
+      <td><img src="{{asset('storage/'.$user->images)}}" alt="ユーザーアイコン"></td>
       <td>{{$user->username}}</td>
       <td>
         @if(auth()->user()->isFollowing($user->id))

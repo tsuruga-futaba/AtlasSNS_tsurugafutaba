@@ -14,27 +14,30 @@
 </div>
 @endif
 <!-- 適切なURLを入力してください -->
-{!! Form::open(['url' => '/register']) !!}
+<div class='main-wrapper'>
+  <div class='register-container'>
+    {!! Form::open(['url' => '/register', 'enctype' => 'multipart/form-data']) !!}
 
-<h2>新規ユーザー登録</h2>
+    <p class=register>新規ユーザー登録</p>
+    <div class=register-form>
+      <p>{{ Form::label('user name') }}</p>
+      <p>{{ Form::text('username',null,['class' => 'input']) }}</p>
 
-{{ Form::label('ユーザー名') }}
-{{ Form::text('username',null,['class' => 'input']) }}
+      <p>{{ Form::label('mail address') }}</p>
+      <p>{{ Form::text('mail',null,['class' => 'input']) }}</p>
 
-{{ Form::label('メールアドレス') }}
-{{ Form::text('mail',null,['class' => 'input']) }}
+      <p>{{ Form::label('password') }}</p>
+      <p>{{ Form::text('password',null,['class' => 'input']) }}</p>
 
-{{ Form::label('パスワード') }}
-{{ Form::text('password',null,['class' => 'input']) }}
+      <p>{{ Form::label('password confirm') }}</p>
+      <p>{{ Form::text('password_confirmation',null,['class' => 'input']) }}</p>
+    </div>
 
-{{ Form::label('パスワード確認') }}
-{{ Form::text('password_confirmation',null,['class' => 'input']) }}
+    <p class=login-btn>{{ Form::submit('REGISTER',['class'=>'btn btn-danger']) }}</p>
 
-{{ Form::submit('登録') }}
+    <p class=register-btn><a href="/login">ログイン画面へ戻る</a></p>
 
-<p><a href="/login">ログイン画面へ戻る</a></p>
-
-{!! Form::close() !!}
-
-
+    {!! Form::close() !!}
+ </div>
+ </div>
 @endsection

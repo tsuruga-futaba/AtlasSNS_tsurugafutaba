@@ -15,19 +15,23 @@ class FollowsController extends Controller
         //フォローしているユーザーのidを取得
         $following_id = Auth::user()->follows()->pluck('followed_id');
         //   dd($following_id);
+        //フォローしているユーザーのidをもとにアイコンを取得
+        $images = User::whereIn('id',$following_id)->get();
         //フォローしているユーザーのidを元に投稿内容を取得
         $posts = Post::with('user')->whereIn('posts.user_id', $following_id)->get();
         // dd($posts);
-        return view('follows.followList', compact('posts'))->with('posts',$posts);
+        return view('follows.followList', compact('posts'))->with('posts',$posts)->with('images',$images);
     }
     public function followerList(){
         //フォローされているユーザーのidを取得
         $followed_id = Auth::user()->follower()->pluck('following_id');
-        //    dd($followed_id);
+            // dd($followed_id);
+        //フォローされているユーザーのidをもとにアイコンを取得
+        $images = User::whereIn('id',$followed_id)->get();
         //フォローされているユーザーのidを元に投稿内容を取得
         $posts = Post::with('user')->whereIn('posts.user_id', $followed_id)->get();
         // dd($posts);
-        return view('follows.followerList', compact('posts'))->with('posts',$posts);
+        return view('follows.followerList', compact('posts'))->with('posts',$posts)->with('images',$images);
     }
     public function unFollow( $user_id)
     {

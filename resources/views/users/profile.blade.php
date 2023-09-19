@@ -2,7 +2,7 @@
 @section('content')
 <div>
   <div>
-  <p>{{$users->images}}</p>
+  <p><img src="{{asset('storage/'.$users->images)}}"></p>
   <p>{{$users->username}}</p>
   <p>{{$users->bio}}</p>
   @if(!(Auth::user()==$users))
@@ -16,7 +16,7 @@
   <div>
     @foreach($posts as $post)
    <tr class="post-contents">
-   <td>{{$post->user->images}}</td>
+   <td><img src="{{asset('storage/'.$post->user->images)}}"></td>
    <td>{{$post->post}}</td>
    <td>{{$post->created_at}}</td>
    </tr>

@@ -58,16 +58,16 @@ class UsersController extends Controller
             $password = $request->input('password');
             $bio=$request->input('bio');
             // dd($bio);
-            $filename=$request->images->getClientOriginalName();
-        // dd($filename);
-            $images = $request->images->storeAs('user-images','public', $filename);
-            // $images = $request->file('images');
-            // $imagesPath = $images->store('../../../public/images');
-            dd($images);
-
-        User::where('id', $id)->update
-        (['username' => $username, 'mail' => $mail, 'password' => $password, 'bio' => $bio, 'images' => $images]);
-
+            // if ($request->input('images')) {
+                 $filename=$request->images->getClientOriginalName();
+             $images = $request->images->storeAs('user-images', $filename,'public');
+             User::where('id', $id)->update
+             (['username' => $username, 'mail' => $mail, 'password' => bcrypt($password), 'bio' => $bio, 'images' => $images]);
+            // }
+            // else {
+            //      User::where('id', $id)->update
+            //      (['username' => $username, 'mail' => $mail, 'password' => $password, 'bio' => $bio,]);
+            // }
         return redirect('/top');
         }
     }

@@ -25,34 +25,44 @@
     <link rel="apple-touch-icon-precomposed" href="画像のURL" />
     <!--OGPタグ/twitterカード-->
     <link rel="stylesheet" href="../../../public/css/style.css ">
+    <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
+
+
+<!--------------------------------------------------->
 <body>
     <header>
-        <div id = "head">
-            <!--ロゴにトップページへ遷移するリンクの設置-->
-        <h1 class="atlas_logo"><a href='/top'><img src="{{asset('/images/atlas.png')}}"></a></h1>
+      <div id = "head">
+         <p class="logo-size"><a href='/top'><img src="{{asset('/images/atlas.png')}}"></a></p>
 
-            <div class="side_user">
+        <div class="side_user">
                  <!--アコーディオンメニューの設置-->
-                <div class="accordion-container">
-                      <p class="user_name">{{Auth::user()->username}}さん</p>
-                    </div>
-                    <div class="accordion-title js-accordion-title">
-                    </div>
-                    <div class="accordion-contents">
-                <ul >
-                    <li><a class="home" href="/top">ホーム</a></li>
-                    <li><a class="profile" href="/profile_edit">プロフィール編集</a></li>
-                    <li><a class="center" href="/logout">ログアウト</a></li>
-                </ul>
-                     </div>
+            <div class="accordion-container">
+                <!--ユーザー名-->
+                <p class="user_name">{{Auth::user()->username}}さん</p>
                   <div class="icon">
-                    <a class="profile" href="{{route('profile',['user_id'=> auth()->id()])}}"><img src="images/icon1.png"></a>
-                  </div>
+                    <img src="{{asset('storage/'.Auth::user()->images)}}">
+                </div>
+                <!--メニュー画面-->
+                <div class="accordion-title js-accordion-title">
+                </div>
+                    <div class="accordion-contents">
+                      <ul >
+                        <li><a class="home" href="/top">ホーム</a></li>
+                        <li><a class="profile" href="/profile_edit">プロフィール編集</a></li>
+                        <li><a class="center" href="/logout">ログアウト</a></li>
+                      </ul>
+                    </div>
 
-             </div>
-         </div>
+
+
+            </div>
+          </div>
+        </div>
     </header>
+
+<!--サイドバー部分-->
     <div id="row">
         <div id="container">
             @yield('content')
@@ -74,6 +84,7 @@
             <p class="btn user_search"><a class="btn btn-primary" href="/search" role="button">ユーザー検索</a></p>
         </div>
     </div>
+
     <footer>
     </footer>
  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
@@ -81,5 +92,7 @@
   <script src="../../../public/js/script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+     <!-- Bootstrap -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>

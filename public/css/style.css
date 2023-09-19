@@ -1,25 +1,41 @@
 @charset "utf-8";
 
-/*html {}*/
-
-/*body {
-    width: 100px;
-        height: 100px;
-        background-color: #4773ff;
-        margin: 0 auto;
-}*/
-
 /* header */
 header {
     background: #0067C6;
+    width: 100%;
+    height: 120px;
+    padding: 10px;
 }
 
 #head {
+    width: 100%;
+    position: absolute;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-    padding: 0, 100px;
 }
+
+.post-wrapper {
+    position: relative;
+    margin-top: 100px;
+    width: auto;
+    height: 0 auto;
+}
+
+.post-contents {
+    position: relative;
+}
+
+
+
+.logo-size {
+    width: 100px;
+    height: 50px;
+    margin: 20px;
+}
+
+
 
 /* main content */
 #row {
@@ -38,77 +54,124 @@ header {
     margin: 0 0 0 auto;
 }
 
-.user_name {
-    color: #fff;
-}
-
+/* main content */
 /* ログインページ */
-/* .welcome-container {
-    width: 100px;
-    height: 100px;
-    background-color: #4773ff;
-    margin: 0 auto;
-} */
-
-/* .welcome {
-    height: 100vh;
-    background-color: #D9AFD9;
-    background-image: linear-gradient(0deg, #FEE32D 0%, #3796ED 100%);
-}
-
 .atlas {
-    width: 20px;
-    height: 20px;
-    background-color: transparent;
+    width: 70%;
+    height: 80%;
     margin: 0 auto;
-} */
+}
 
 /* トップヘッダー */
 .atlas_logo img {
-    position: absolute;
-    width: 100px;
-    height: 50px;
+    width: 20%;
+    height: auto;
+    display: block;
+    margin: 150px auto 0px;
 }
+
+.atlas-text {
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto 30px;
+    font-size: 35px;
+    color: #fff;
+    text-align: center;
+}
+
+.main-wrapper {
+    width: 50%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5%;
+}
+
+.login-container,
+.register-container {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+}
+
+.welcome,
+.register,
+.clear {
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+}
+
+.login-form,
+.register-form {
+    width: 100%;
+    text-align: left;
+    font-size: 15px;
+}
+
+.login-form input,
+.register-form input {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.register-btn a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.login-btn {
+    text-align: right;
+    width: 100%;
+}
+
+.welcome-text {
+    font-size: 25px;
+    font-weight: bold;
+}
+
 
 /* アコーディオンメニュー  */
-
-.accordion-contents {
-    padding: 10px;
-    display: none;
-    padding: 10px;
-}
 
 .side_user {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
+    height: auto;
     align-items: right;
 }
 
-.accordion-title {
-    display: flex;
-    position: absolute;
-    font-size: 1.25rem;
-    font-weight: normal;
-    color: #fff;
-    width: 50px;
-    height: 17px;
-    padding-left: 50px;
+.accordion-contents {
+    padding: 10px;
+    padding: 10px;
 }
 
 
+/* 矢印下向き・メニュー閉じる */
 .accordion-title {
+    position: relative;
+    display: flex;
+    font-size: 1.25rem;
+    font-weight: normal;
+    color: #fff;
+    width: auto;
+    height: 17px;
+    padding-left: 50px;
     color: #fff;
     cursor: pointer;
     font-size: 16px;
     padding: 10px 20px;
 }
 
-/* 矢印 */
-.accordion-title {
-    position: relative;
-}
-
+/* メニュー開く */
 .accordion-title::after {
     border-right: solid 2px #fff;
     border-top: solid 2px #fff;
@@ -123,12 +186,14 @@ header {
     width: 8px;
 }
 
+/* 矢印上向き */
 .accordion-title.open::after {
     top: 45%;
     transform: rotate(-45deg);
 }
 
 /*矢印ここまで*/
+
 
 
 /* バリデーションエラー */
@@ -169,13 +234,6 @@ header {
     z-index: 1;
 }
 
-/* .submit_btn {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    top: 150px;
-    left: 490px;
-    z-index: 3; */
 
 /* モーダル機能 */
 
@@ -213,22 +271,17 @@ header {
     width: 60%;
 }
 
-.btn-danger {
-    cursor: pointer;
-    height: 200px;
-    margin-inline: auto;
-    margin-top: 20px;
-    position: relative;
-    width: 200px;
-}
+
 
 /* 画像のスタイル */
 .btn-danger img {
     height: auto;
     left: 0;
     position: absolute;
-    width: 100%;
+    width: 5%;
 }
+
+*/
 
 /* 2枚目の画像は最初透明 */
 .btn-danger img:last-of-type {

@@ -1,8 +1,6 @@
 @extends('layouts.login')
 @csrf
 @section('content')
-
-<!-- <h2>機能を実装していきましょう。</h2> -->
 <!--バリデーションエラーメッセージ-->
 @if($errors->any())
 <div class="post_error">
@@ -14,25 +12,27 @@
 </div>
 @endif
 
+<div class=post-wrapper>
 <div class=post-form>
-  <div class="icon"><img src="images/icon1.png"></div>
-{!! Form::open(['url' => '/top']) !!}
+  <div class="icon"><img src="{{asset('storage/'.Auth::user()->images)}}">
+  </div>
+  <p>{!! Form::open(['url' => '/top']) !!}</p>
 
 
-{{ Form::input('textarea','post',null,['placeholder' => '投稿内容を入力してください。','rows' => '3','class'=>'post_input'] )}}
+  <p>{{ Form::input('textarea','post',null,['placeholder' => '投稿内容を入力してください。','rows' => '3','class'=>'post_input'] )}}</p>
 
-{{ Form::input('hidden','user_id',Auth::user()->id)}}
+   {{ Form::input('hidden','user_id',Auth::user()->id)}}
 
-<button type="submit" class="submit_btn"><img src="images/post.png"></button>
-<!-- {{ Form::button('<img src="images/post.png" alt="Submit">',['type'=>'submit','class'=>'submit_btn'])}} -->
-{!! Form::close() !!}
+  <button type="submit" class="submit_btn"><img src="images/post.png"></button>
+  <!-- {{ Form::button('<img src="images/post.png" alt="Submit">',['type'=>'submit','class'=>'submit_btn'])}} -->
+ {!! Form::close() !!}
 </div>
 
 @foreach($list as $list)
-<table class="table table-hover">
+<table class="table table-hover post-content">
   <tr>
     <td>{{$list ->user ->username }}</td>
-     <td class="icon"><img src="images/icon1.png"></td>
+     <td class="icon"><img src="{{asset('storage/'.$list->user->images)}}"></td>
     <!-- <td>{{$list ->user ->images}}</td> -->
     <td>{{$list ->post}}</td>
     <td>{{$list ->created_at}}</td>
@@ -59,6 +59,7 @@
            </form>
            <a class="js-modal-close" href="">閉じる</a>
         </div>
+    </div>
     </div>
 
 @endsection

@@ -3,18 +3,19 @@
 
 <!-- プロフィール編集画面 -->
 
-<img src=" {{ asset(Auth::user()->images)}}">
-<!-- {{Auth::user()->images}} -->
+
+<img src="{{asset('storage/'.Auth::user()->images)}}">
+
 
 <!-- 適切なURLを入力してください -->
 {!! Form::open(['url' => '/profile_edit', 'enctype' => 'multipart/form-data']) !!}
 
 
 {{ Form::label('user name') }}
-{{ Form::text('username',null,['class' => 'input','placeholder'=>Auth::user()->username]) }}
+{{ Form::text('username',Auth::user()->username,['class' => 'input']) }}
 
 {{ Form::label('mail address') }}
-{{ Form::text('mail',null,['class' => 'input','placeholder'=>Auth::user()->mail]) }}
+{{ Form::text('mail',Auth::user()->mail,['class' => 'input']) }}
 
 {{ Form::label('password') }}
 {{ Form::password('password',null,['class' => 'input']) }}
@@ -23,7 +24,7 @@
 {{ Form::password('password_confirmation',null,['class' => 'input']) }}
 
 {{ Form::label('bio')}}
-{{Form::text('bio',null,['class' => 'input','placeholder'=>Auth::user()->bio])}}
+{{Form::text('bio',Auth::user()->bio,['class' => 'input'])}}
 
 {{ Form::label('icon image')}}
 {{ Form::file('images',['class' => 'input'])}}
