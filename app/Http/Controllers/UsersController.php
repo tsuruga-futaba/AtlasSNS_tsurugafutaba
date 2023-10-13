@@ -63,11 +63,7 @@ class UsersController extends Controller
              $images = $request->images->storeAs('user-images', $filename,'public');
              User::where('id', $id)->update
              (['username' => $username, 'mail' => $mail, 'password' => bcrypt($password), 'bio' => $bio, 'images' => $images]);
-            // }
-            // else {
-            //      User::where('id', $id)->update
-            //      (['username' => $username, 'mail' => $mail, 'password' => $password, 'bio' => $bio,]);
-            // }
+
         return redirect('/top');
         }
     }
