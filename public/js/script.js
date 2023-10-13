@@ -5,13 +5,18 @@
 
 $(function () {
   // タイトルをクリックすると
-  $(".js-accordion-title").on("click", function () {
-    // クリックした次の要素を開閉
-    $(this).next().slideToggle(300);
+  $(".js-menu-title").on("click", function () {
+    // 下記タイトルの要素を開閉
+    $(".accordion-contents").slideToggle(300);
     // タイトルにopenクラスを付け外しして矢印の向きを変更
-    $(this).toggleClass("open", 300);
+    $(".js-accordion-title").toggleClass("open", 300);
   });
 });
+
+
+
+
+
 
 // モーダルを開く処理
 $(function () {

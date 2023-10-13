@@ -24,7 +24,7 @@
 </head>
 
 
-<body>
+<body class="center-block">
   <div class=atlas>
     <div class=atlas_logo>
       <img src="images/atlas.png">

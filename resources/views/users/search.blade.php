@@ -18,24 +18,26 @@
 
 <!-- 保存されているユーザー一覧 -->
 <div class="container-list">
-  <table class="table table-hover">
+  <div class="user-wrapper">
     @foreach($users as $user)
     <!-- 自分以外のユーザーを表示 -->
     @if(!(Auth::user()==$user))
-    <tr>
-      <td><img src="{{asset('storage/'.$user->images)}}" alt="ユーザーアイコン"></td>
-      <td>{{$user->username}}</td>
-      <td>
+    <div class="user-list">
+      <p class="icon"><img src="{{asset('storage/'.$user->images)}}" alt="ユーザーアイコン"></p>
+      <p class="username">{{$user->username}}</p>
+      <p class="follow-btn">
         @if(auth()->user()->isFollowing($user->id))
-      <a href="{{route('un-follow',['user_id'=> $user->id])}}" class="btn un-follow_btn">フォロー解除</a>
+      <button type="button" class="btn btn-danger">
+        <a href="{{route('un-follow',['user_id'=> $user->id])}}" class="btn un-follow_btn">フォロー解除</a></button>
       @else
-      <a href="{{route('follow',['user_id'=> $user->id])}}" class="btn follow_btn">フォローする</a>
+      <button type="button" class="btn btn-primary">
+      <a href="{{route('follow',['user_id'=> $user->id])}}" class="btn follow_btn">フォローする</a></button>
       @endif
-      </td>
-    </tr>
+      </p>
+    </div>
     @endif
     @endforeach
-    </table>
+    </div>
 </div>
 
  @endsection

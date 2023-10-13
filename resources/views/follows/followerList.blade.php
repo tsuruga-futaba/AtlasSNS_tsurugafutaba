@@ -1,24 +1,37 @@
 @extends('layouts.login')
 
 @section('content')
+
+<div class="follow-wrapper">
+<div class="follow-list-wrapper">
 <h1>Follower list</h1>
 <!-- アイコン表示(書きかけ) -->
-<table>
+<div class="icon-list">
 @foreach($images as $image)
-  <td><a href="{{route('profile',['user_id'=> $image ->id])}}" class=""><img src="{{asset('storage/'.$image->images)}}"></a></td>
+  <p><a href="{{route('profile',['user_id'=> $image ->id])}}" class="icon"><img src="{{asset('storage/'.$image->images)}}"></a></p>
 @endforeach
-</table>
+</div>
+</div>
 
 <!-- 投稿一覧表示 -->
-<table>
+<div class="table table-hover post-content">
 @foreach($posts as $post)
-<tr class="post-contents">
-<td><a href="{{route('profile',['user_id'=> $post->user_id])}}" class=""><img src="{{asset('storage/'.$post->user->images)}}"></a></td>
-<td>{{$post->user->username}}</td>
-<td>{{$post->post}}</td>
-<td>{{$post->created_at}}</td>
-</tr>
+<div class="post-list post-contents">
+<div class="post-a">
+<p class="icon"><a href="{{route('profile',['user_id'=> $post->user_id])}}" class=""><img src="{{asset('storage/'.$post->user->images)}}"></a></p>
+</div>
+<div class="post-b">
+<p>{{$post->user->username}}</p>
+<p>{{$post->post}}</p>
+ </div>
+ <div class="post-c">
+<p>{{$post->created_at}}</p>
+</div>
+</div>
 @endforeach
-</table>
+</div>
+</div>
+
+
 
 @endsection
