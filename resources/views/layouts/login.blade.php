@@ -33,7 +33,6 @@
 <!--------------------------------------------------->
 <body>
     <header>
-      <div id = "head">
          <p class="logo-size"><a href='/top'><img class="logo-size" src="{{asset('/images/atlas.png')}}"></a></p>
 
         <div class="side_user">
@@ -58,7 +57,6 @@
                       </ul>
             </div>
           </div>
-        </div>
     </header>
 
 <!--サイドバー部分-->

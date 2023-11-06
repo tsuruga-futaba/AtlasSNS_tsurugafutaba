@@ -72,9 +72,9 @@ class FollowsController extends Controller
                 'following_id' => $loggedInUserId,
                 'followed_id' => $followedUserId,
             ]);
-            return redirect('/search');
-
+            // フォローしていた場合のコードがない
         }
+         return redirect('/search');
     }
      public function unFollowPro( $user_id)
     {

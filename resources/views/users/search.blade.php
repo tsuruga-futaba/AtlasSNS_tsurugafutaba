@@ -30,6 +30,7 @@
       <button type="button" class="btn btn-danger">
         <a href="{{route('un-follow',['user_id'=> $user->id])}}" class="btn un-follow_btn">フォロー解除</a></button>
       @else
+      <!-- フォロー機能 -->
       <button type="button" class="btn btn-primary">
       <a href="{{route('follow',['user_id'=> $user->id])}}" class="btn follow_btn">フォローする</a></button>
       @endif

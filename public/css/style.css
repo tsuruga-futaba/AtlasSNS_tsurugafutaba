@@ -1,52 +1,36 @@
 @charset "utf-8";
 
 .icon a img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
 }
 
-
-
 /* header */
 header {
-    position: absolute;
-    background: #0067C6;
-    width: 100%;
-    height: 12%;
-    padding: 10px;
-    z-index: 100;
-}
-
-#head {
     position: relative;
     width: 100%;
+    padding: 10px;
+    z-index: 100;
+    background: #0067C6;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-    height: 100%;
 }
-
-
 
 .logo-size {
     position: relative;
-    height: 80%;
-    margin-top: 7px;
-    flex: 4;
+    width: 200px;
 }
 
-.side_user {
-    flex: 1;
+.logo-size img {
+    width: 100%;
 }
-
-
 
 /* main content */
 #row {
     display: flex;
     flex-flow: row wrap;
-
 }
 
 #container {
@@ -55,8 +39,6 @@ header {
     flex-wrap: wrap;
     flex-direction: column;
 }
-
-
 
 /* main content */
 /* ログインページ */
@@ -147,23 +129,26 @@ header {
 }
 
 /* ヘッダーメニュー */
+.side_user {
+    width: 25%;
+}
+
 .menu-title {
     display: flex;
     flex-wrap: nowrap;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     align-items: center;
     -webkit-box-align: center;
-    gap: 8%;
+    /* gap: 8%; */
     cursor: pointer;
 }
 
-.accordion-container {
+/* .accordion-container {
     position: relative;
     width: 100%;
     height: 100%;
 
-}
-
+} */
 .menu-title ul li {
     padding: 0 10px;
     position: relative;
@@ -173,7 +158,7 @@ header {
     color: #fff;
     font-size: 150%;
     font-weight: bold;
-    width: 43%;
+    /* width: 43%; */
 }
 
 .menu-title li.icon img {
@@ -182,7 +167,6 @@ header {
     height: 100px;
     border-radius: 10%;
 }
-
 
 .accordion-container {
     display: flex;
@@ -193,43 +177,47 @@ header {
     text-decoration: none;
 }
 
-
 /* アコーディオンメニュー */
 .accordion-contents {
+    position: relative;
     display: none;
-    width: 95%;
-    height: 359%;
-    font-size: 270%;
-    line-height: 200%;
 }
 
 .accordion-wrapper {
-    position: relative;
-    height: 100%;
+    position: absolute;
+    z-index: 120;
+    width: 87%;
+    left: 15%;
+    top: 10;
+    font-size: 36px;
 }
 
 .accordion-contents ul li {
     color: #848484;
     border: 1px solid;
     background-color: #fff;
-    padding: 10px 37px;
-    width: 107%;
+    /* padding: 10px 37px;
+    width: 107%; */
 }
 
 .accordion-contents ul li a {
+    display: inline-block;
+    background-color: #fff;
     color: #848484;
+    padding: 10px 37px;
     text-decoration: none;
+    width: 300px;
 }
 
-.accordion-contents ul li:hover {
+/* .accordion-contents ul li:hover {
     color: #fff;
     text-decoration: none;
     background-color: #00297e;
-}
-
+} */
 .accordion-contents ul li a:hover {
     color: #fff;
     text-decoration: none;
+    background-color: #00297e;
 }
 
 
@@ -264,10 +252,6 @@ header {
 
 /*矢印ここまで*/
 
-
-
-
-
 /* サイドバー*/
 .post-wrapper-a {
     display: flex;
@@ -277,12 +261,12 @@ header {
 #side-bar {
     flex: 0 0 19%;
     border-left: 1px solid #727272;
-    margin: 0 0 0 auto;
-    height: 4000px;
+    /* margin: 0 0 0 auto; */
+    /* height: 4000px; */
 }
 
 #confirm {
-    margin-top: 30%;
+    /* margin-top: 30%; */
     border-bottom: 1px solid #848484;
     padding: 40px;
     font-size: 25px;
@@ -295,7 +279,6 @@ header {
 .side-btn {
     margin: 0 70px;
 }
-
 
 .btn.btn-primary.user_search {
     margin: 15% 59%;
@@ -310,12 +293,9 @@ header {
     position: relative;
 }
 
-
-
-
 /* バリデーションエラー */
 .post_error {
-    margin-top: 7%;
+    /* margin-top: 7%; */
     width: 100%;
     color: red;
 }
@@ -326,35 +306,34 @@ header {
 
 
 /* 投稿フォーム */
-
 .post-wrapper {
-    position: absolute;
-    width: 80%;
-    height: 100%;
+    /* position: absolute; */
+    /* width: 80%; */
+    /* height: 100%; */
 }
 
 .form-wrapper {
-    position: relative;
+    /* position: relative; */
     width: 100%;
-    height: 30%;
+    /* height: 30%; */
 }
 
 .post-form {
     display: flex;
     flex-wrap: nowrap;
     border-bottom: 10px solid #848484;
-    margin-top: 10%;
-    width: 101%;
-    height: 22%;
-    gap: 0%;
+    /* margin-top: 10%; */
+    width: 100%;
+    /* height: 22%;
+    gap: 0%; */
     -webkit-box-align: center;
 }
 
 .post-form .icon {
     border: none;
     width: 6%;
-    height: 97%;
-    margin-left: 5%;
+    /* height: 97%;
+    margin-left: 5%; */
 }
 
 .icon img {
@@ -401,12 +380,7 @@ header {
     width: 42%;
 }
 
-
-
 /* 投稿一覧 */
-
-
-
 .table.table-hover.post-content {
     width: 100%;
     position: relative;
@@ -427,7 +401,8 @@ header {
 
 
 .post-a {
-    margin-left: 8%;
+    flex: 1;
+    /* margin-left: 8%;*/
 }
 
 .post-a .icon {
@@ -440,14 +415,13 @@ header {
     border-radius: 10%;
 }
 
-
 .post-b {
     display: flex;
     flex-direction: column;
-    line-height: 315%;
-    font-size: 147%;
     flex: 5;
-    margin-left: 2%;
+    /* line-height: 315%;
+    font-size: 147%;
+    margin-left: 2%; */
 }
 
 .post-b .post-content {
@@ -457,17 +431,20 @@ header {
 .post-c {
     display: flex;
     flex-direction: column;
+    flex: 1;
 }
 
 .post-c .post-c-btn {
     cursor: pointer;
     display: flex;
     flex-wrap: nowrap;
+    /* align-items: center; */
+    -webkit-box-align: center;
 }
 
 .post-c .post-c-btn p a img {
     width: 50px;
-    height: 50px;
+    /* height: 50px; */
     border-radius: 10%;
     position: relative;
 }
@@ -494,9 +471,7 @@ header {
     opacity: 0;
 }
 
-
 /* モーダル機能 */
-
 .js-modal {
     display: none;
 }
@@ -539,8 +514,6 @@ header {
     padding: 2%;
 }
 
-
-
 /* 画像のスタイル */
 .btn-danger img {
     height: auto;
@@ -548,7 +521,6 @@ header {
     position: absolute;
     width: 5%;
 }
-
 
 /* ユーザー検索 */
 .search-form {
@@ -574,7 +546,6 @@ header {
 .search-form form button {
     border: none;
     background-color: none;
-
 }
 
 .search-form form button img {
@@ -621,9 +592,7 @@ header {
     color: #fff;
 }
 
-
 /* フォローリスト・フォロワーリスト */
-
 .follow-wrapper {
     margin-top: 10%;
     width: 105.5%;
@@ -648,8 +617,6 @@ header {
     gap: 10px;
     margin-left: 4%;
 }
-
-
 
 /* プロフィール編集画面 */
 .profile-edit-wrapper {
@@ -694,11 +661,7 @@ header {
     padding: 3px 140px;
 }
 
-
-
-
 /* プロフィール画面 */
-
 .profile-wrapper {
     margin-top: 10%;
 }

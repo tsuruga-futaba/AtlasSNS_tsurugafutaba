@@ -33,14 +33,22 @@ class User extends Authenticatable
     }
 
     // フォロー機能の実装
+    // フォローしている人のリスト
     public function follows()
     {
         return $this->belongsToMany('App\User','follows','following_id','followed_id');
     }
+
+    // フォローされている人のリスト
     public function follower()
     {
         return $this->belongsToMany('App\User', 'follows', 'followed_id', 'following_id');
     }
+
+    // belongsToMany('関係するモデル', '中間テーブルのテーブル名', '中間テーブル内で対応しているID名', '関係するモデルで対応しているID名
+    
+
+
     //フォローしているか
     public function isFollowing(Int $user_id)
     {
