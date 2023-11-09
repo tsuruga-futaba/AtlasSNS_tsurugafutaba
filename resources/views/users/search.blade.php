@@ -9,12 +9,12 @@
     placeholder="ユーザー名" value="@if(isset($keyword)){{$keyword}}@endif">
     <button type="submit" class=""><img src="./images/search.png"> </button>
   </form>
-</div>
+  <!-- 検索ワードを表示 -->
+  @if(!empty($keyword))
+    <p class="search-keyword">検索ワード : {{$keyword}}</p>
+  @endif
 
-<!-- 検索ワードを表示 -->
-@if(!empty($keyword))
-<p>検索ワード:{{$keyword}}</p>
-@endif
+</div>
 
 <!-- 保存されているユーザー一覧 -->
 <div class="container-list">
