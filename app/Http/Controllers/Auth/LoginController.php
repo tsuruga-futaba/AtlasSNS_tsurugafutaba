@@ -50,6 +50,9 @@ class LoginController extends Controller
                 return redirect('/top');
             }
         }
+        // else {
+        //     return view('/top');
+        // }
         return view("auth.login");
     }
 

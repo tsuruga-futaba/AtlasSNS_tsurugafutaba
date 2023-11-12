@@ -32,56 +32,54 @@
 
 <!--------------------------------------------------->
 <body>
-    <header>
-         <p class="logo-size"><a href='/top'><img class="logo-size" src="{{asset('/images/atlas.png')}}"></a></p>
-
-        <div class="side_user">
-            <ul class=" menu-title js-menu-title">
-                <!--ユーザー名-->
-                <li class="user_name">{{Auth::user()->username}}さん</li>
-                <!-- 矢印 -->
-                <li class="accordion-title js-accordion-title"></li>
-                <!-- アイコン -->
-                <li class="icon">
-                    <img src="{{asset('storage/'.Auth::user()->images)}}">
-                  </li>
-             </ul>
-
-              <!--アコーディオンメニューの設置-->
-                <!--メニュー画面-->
-            <div class="accordion-contents">
-                      <ul class="accordion-wrapper">
-                        <li><a class="home" href="/top">HOME</a></li>
-                        <li><a class="profile" href="/profile_edit">プロフィール編集</a></li>
-                        <li><a class="center" href="/logout">ログアウト</a></li>
-                      </ul>
-            </div>
-          </div>
-    </header>
-
-<!--サイドバー部分-->
-    <div id="row">
-        <div id="container">
-            @yield('content')
-        </div >
-        <div id="side-bar">
-            <div id="confirm">
-                <p>{{Auth::user()->username}}さんの</p>
-                <div>
-                <p>フォロー数     {{Auth::user()->follows()->get()->count()}}名</p>
-                </div>
-                <p class="btn "><a class="btn btn-primary side-btn follows-btn" href="/follow-list" role="button">フォローリスト</a></p>
-                <div>
-                <p>フォロワー数     {{Auth::user()->follower()->get()->count()}}名</p>
-                </div>
-                <p class="btn"><a class="btn btn-primary side-btn follows-btn" href="/follower-list" role="button">フォロワーリスト</a></p>
-            </div>
-            <div class="btn user_search search"><a class="btn btn-primary user_search " href="/search" role="button">ユーザー検索</a></div>
-        </div>
+  <header>
+    <p class="logo-size"><a href='/top'><img class="logo-size" src="{{asset('/images/atlas.png')}}"></a></p>
+    <div class="side_user">
+      <ul class=" menu-title js-menu-title">
+        <!--ユーザー名-->
+        <li class="user_name">{{Auth::user()->username}}さん</li>
+        <!-- 矢印 -->
+        <li class="accordion-title js-accordion-title"></li>
+        <!-- アイコン -->
+        <li class="icon">
+          <img src="{{asset('storage/'.Auth::user()->images)}}">
+        </li>
+      </ul>
+      <!--アコーディオンメニューの設置-->
+      <!--メニュー画面-->
+      <div class="accordion-contents">
+        <ul class="accordion-wrapper">
+          <li><a class="home" href="/top">HOME</a></li>
+          <li><a class="profile" href="/profile_edit">プロフィール編集</a></li>
+          <li><a class="center" href="/logout">ログアウト</a></li>
+        </ul>
+      </div>
     </div>
-
-    <footer>
-    </footer>
+  </header>
+  <!--サイドバー部分-->
+  <div id="row">
+    <div id="container">
+      @yield('content')
+    </div >
+    <div id="side-bar">
+      <div id="confirm">
+        <p>{{Auth::user()->username}}さんの</p>
+        <div>
+          <p>フォロー数     {{Auth::user()->follows()->get()->count()}}名</p>
+        </div>
+        <p class="btn "><a class="btn btn-primary side-btn follows-btn" href="/follow-list" role="button">フォローリスト</a></p>
+        <div>
+          <p>フォロワー数     {{Auth::user()->follower()->get()->count()}}名</p>
+        </div>
+        <p class="btn"><a class="btn btn-primary side-btn follows-btn" href="/follower-list" role="button">フォロワーリスト</a></p>
+      </div>
+      <div class="btn user_search search">
+        <a class="btn btn-primary user_search " href="/search" role="button">ユーザー検索</a>
+      </div>
+    </div>
+  </div>
+  <footer>
+  </footer>
  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
  <script src="{{asset('js/script.js')}}"></script>
   <script src="../../../public/js/script.js"></script>
