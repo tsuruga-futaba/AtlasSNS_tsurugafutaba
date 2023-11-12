@@ -2,7 +2,6 @@
 @section('content')
 <!--バリデーションエラーメッセージ-->
 <div class=post-wrapper>
- <div class="post-wrapper-a">
    @if($errors->any())
    <div class="post_error">
       <ul>
@@ -45,7 +44,6 @@
       </div>
       @endforeach
     </div>
-  </div>
 
    <!-- モーダルの中身 -->
   <div class="modal js-modal">

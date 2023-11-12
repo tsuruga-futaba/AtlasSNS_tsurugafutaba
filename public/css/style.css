@@ -159,7 +159,7 @@ header {
 /*矢印ここまで*/
 
 /* サイドバー*/
-.post-wrapper-a {
+.post-wrapper {
     display: flex;
     flex-wrap: wrap;
 }
@@ -308,7 +308,7 @@ header {
 
 .post-a {
     flex: 1;
-    /* margin-left: 8%;*/
+    margin-left: 8%;
 }
 
 .post-a .icon {
@@ -512,8 +512,8 @@ header {
 
 /* フォローリスト・フォロワーリスト */
 .follow-wrapper {
-    margin-top: 10%;
-    width: 105.5%;
+    /* margin-top: 10%;
+    width: 105.5%; */
     margin-left: -5%;
 }
 
