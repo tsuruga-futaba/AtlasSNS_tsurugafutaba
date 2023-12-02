@@ -24,7 +24,7 @@
     <!--iphoneのアプリアイコン指定-->
     <link rel="apple-touch-icon-precomposed" href="画像のURL" />
     <!--OGPタグ/twitterカード-->
-    <link rel="stylesheet" href="../../../public/css/style.css ">
+    <!-- <link rel="stylesheet" href="../../../public/css/style.css "> -->
     <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
@@ -60,17 +60,13 @@
   <div id="row">
     <div id="container">
       @yield('content')
-    </div >
+    </div>
     <div id="side-bar">
       <div id="confirm">
         <p>{{Auth::user()->username}}さんの</p>
-        <div>
-          <p>フォロー数     {{Auth::user()->follows()->get()->count()}}名</p>
-        </div>
+        <p>フォロー数{{Auth::user()->follows()->get()->count()}}名</p>
         <p class="btn "><a class="btn btn-primary side-btn follows-btn" href="/follow-list" role="button">フォローリスト</a></p>
-        <div>
-          <p>フォロワー数     {{Auth::user()->follower()->get()->count()}}名</p>
-        </div>
+        <p>フォロワー数{{Auth::user()->follower()->get()->count()}}名</p>
         <p class="btn"><a class="btn btn-primary side-btn follows-btn" href="/follower-list" role="button">フォロワーリスト</a></p>
       </div>
       <div class="btn user_search search">
@@ -80,12 +76,12 @@
   </div>
   <footer>
   </footer>
- <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
- <script src="{{asset('js/script.js')}}"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="{{asset('js/script.js')}}"></script>
   <script src="../../../public/js/script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-     <!-- Bootstrap -->
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>

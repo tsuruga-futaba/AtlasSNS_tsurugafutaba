@@ -30,11 +30,11 @@ header {
 /* main content */
 #row {
     display: flex;
-    flex-flow: row wrap;
+    /* flex-flow: row wrap; */
 }
 
 #container {
-    flex: 0 0 80%;
+    flex: 0 0 75%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -62,7 +62,7 @@ header {
 
 .user_name {
     color: #fff;
-    font-size: 150%;
+    /* font-size: 150%; */
     font-weight: bold;
     /* width: 43%; */
 }
@@ -95,7 +95,7 @@ header {
     width: 87%;
     left: 15%;
     top: 10;
-    font-size: 36px;
+    /* font-size: 36px; */
 }
 
 .accordion-contents ul li {
@@ -165,7 +165,7 @@ header {
 }
 
 #side-bar {
-    flex: 0 0 19%;
+    flex: 0 0 18%;
     border-left: 1px solid #727272;
     /* margin: 0 0 0 auto; */
     /* height: 4000px; */
@@ -175,11 +175,11 @@ header {
     /* margin-top: 30%; */
     border-bottom: 1px solid #848484;
     padding: 40px;
-    font-size: 25px;
+    /* font-size: 25px; */
 }
 
 #confirm .btn {
-    font-size: 17px;
+    /* font-size: 17px; */
 }
 
 .side-btn {
@@ -237,9 +237,9 @@ header {
 
 .post-form .icon {
     border: none;
-    width: 6%;
-    /* height: 97%;
-    margin-left: 5%; */
+    width: 12%;
+    margin-left: 5%;
+    margin-top: 2%;
 }
 
 .icon img {
@@ -250,6 +250,8 @@ header {
 
 .post-form .post-input {
     position: relative;
+    margin-left: 10%;
+    margin-top: 4%;
     width: 100%;
     height: 100%;
     flex: 5;
@@ -260,15 +262,15 @@ header {
     border: none;
     vertical-align: top;
     margin-top: 3%;
-    margin-left: 3%;
-    font-size: 35px;
+    /* font-size: 35px; */
     z-index: 5;
     width: 105%;
 }
 
 .post-form li.submit_btn {
     position: relative;
-    margin-top: 7%;
+    margin-top: 6%;
+    margin-bottom: 3%;
     left: auto;
     background-color: #fff;
     z-index: 3;
@@ -337,7 +339,6 @@ header {
 .post-c {
     display: flex;
     flex-direction: column;
-    flex: 1;
 }
 
 .post-c .post-c-btn {
@@ -416,7 +417,7 @@ header {
     width: 87%;
     height: 90%;
     margin: 1%;
-    font-size: 180%;
+    /* font-size: 180%; */
     padding: 2%;
 }
 
@@ -449,7 +450,7 @@ header {
 }
 
 .search-form form input {
-    font-size: 210%;
+    /* font-size: 210%; */
     margin-right: 8%;
     border-color: #727272;
 }
@@ -466,7 +467,7 @@ header {
 .search-keyword {
     flex: 1;
     text-align: center;
-    font-size: 40px;
+    /* font-size: 40px; */
 }
 
 .container-list .table div {
@@ -494,7 +495,7 @@ header {
 .user-list .username {
     margin: auto 5px;
     width: 230px;
-    font-size: 23px;
+    /* font-size: 23px; */
 }
 
 .user-list .icon {
@@ -512,8 +513,8 @@ header {
 
 /* フォローリスト・フォロワーリスト */
 .follow-wrapper {
-    /* margin-top: 10%;
-    width: 105.5%; */
+    /* margin-top: 10%; */
+    width: 105.5%;
     margin-left: -5%;
 }
 
@@ -549,7 +550,7 @@ header {
 }
 
 .edit-wrapper {
-    font-size: 40px;
+    /* font-size: 40px; */
     width: 130%;
 }
 
@@ -590,24 +591,32 @@ header {
     border-bottom: 10px solid #848484;
 }
 
-.pro-a {
+.pro-icon {
     width: 10%;
     margin-left: 9%;
 }
 
-.pro-aa {
-    width: 15%;
+.pro-name-bio {
     display: flex;
     flex-direction: column;
+    width: 66%;
 }
 
-.pro-b {
-    width: 60%;
+.pro-name {
+    width: 100%;
     display: flex;
-    flex-direction: column;
 }
 
-.pro-c {
+.pro-bio {
+    width: 100%;
+    display: flex;
+}
+
+.pro-name-bio .label {
+    width: 10%;
+}
+
+.pro-btn {
     width: 15%;
     margin-top: 3%;
 }

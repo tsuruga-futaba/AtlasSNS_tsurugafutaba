@@ -29,7 +29,6 @@ class RegisterFormRequest extends FormRequest
         return ['username'=>'required|between:2,12',
                 'mail'=>'required|between:5,40|unique:users,mail|email',
                 'password'=>'required|between:8,20|alpha_num|confirmed',
-                'password_confirmation'=>'required|alpha_num',
                ];
     }
 

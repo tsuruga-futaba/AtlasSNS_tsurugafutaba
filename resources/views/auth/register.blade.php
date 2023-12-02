@@ -33,6 +33,6 @@
     <p class=register-btn><a href="/login">ログイン画面へ戻る</a></p>
 
     {!! Form::close() !!}
- </div>
+</div>
 </div>
 @endsection

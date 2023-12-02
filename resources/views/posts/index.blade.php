@@ -2,14 +2,14 @@
 @section('content')
 <!--バリデーションエラーメッセージ-->
 <div class=post-wrapper>
-   @if($errors->any())
-   <div class="post_error">
+@if($errors->any())
+  <div class="post_error">
       <ul>
         @foreach($errors->all() as $error)
         <li>{{$error}}</li>
         @endforeach
       </ul>
-   </div>
+  </div>
     @endif
     {!! Form::open(['url' => '/top','class'=>'form-wrapper']) !!}
     <ul class=post-form>
@@ -28,7 +28,7 @@
         </div>
         <div class="post-b">
           <p>{{$list ->user ->username }}</p>
-           <p class="post-content">{{$list ->post}}</p>
+          <p class="post-content">{{$list ->post}}</p>
         </div>
         <div class="post-c">
           <p>{{$list ->created_at}}</p>
@@ -45,7 +45,7 @@
       @endforeach
     </div>
 
-   <!-- モーダルの中身 -->
+<!-- モーダルの中身 -->
   <div class="modal js-modal">
     <div class="modal__bg js-modal-close">
     </div>

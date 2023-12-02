@@ -28,15 +28,15 @@
   <div class=atlas>
     <div class=atlas_logo>
       <img src="images/atlas.png">
-     <p class=atlas-text>Social Network Service</p>
+    <p class=atlas-text>Social Network Service</p>
     </div>
-   <div id="login-container">
-     @yield('content')
-   </div>
+  <div id="login-container">
+  @yield('content')
+  </div>
   <script src="JavaScriptファイルのURL"></script>
   <script src="JavaScriptファイルのURL"></script>
   <!-- Bootstrap -->
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     </div>
 </body>
 </html>

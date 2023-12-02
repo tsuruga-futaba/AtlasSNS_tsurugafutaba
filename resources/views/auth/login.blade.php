@@ -3,7 +3,7 @@
 @section('content')
 <div class='main-wrapper'>
   <div class="login-container">
-     {!! Form::open(['url' => '/login', 'method' => 'post']) !!}
+    {!! Form::open(['url' => '/login', 'method' => 'post']) !!}
       @csrf
       <p class='welcome'>AtlasSNSへようこそ</p>
       <div class=login-form>
@@ -14,8 +14,8 @@
       </div>
 
       <p class=login-btn>{{ Form::submit('LOGIN',['class'=>'btn btn-danger']) }}</p>
-       <p class=register-btn><a href="/register">新規ユーザーの方はこちら</a></p>
-     {!! Form::close() !!}
+      <p class=register-btn><a href="/register">新規ユーザーの方はこちら</a></p>
+    {!! Form::close() !!}
   </div>
 </div>
 @endsection

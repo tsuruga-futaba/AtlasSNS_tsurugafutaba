@@ -2,18 +2,20 @@
 @section('content')
 <div class="profile-wrapper">
   <div class="profile-main">
-    <div class="pro-a">
+    <div class="pro-icon">
       <p class="icon"><img src="{{asset('storage/'.$users->images)}}"></p>
     </div>
-    <div class="pro-aa">
-      <h2>name</h2>
-      <h2>bio</h2>
+    <div class="pro-name-bio">
+      <div class="pro-name">
+        <p class="label">name</p>
+        <p>{{$users->username}}</p>
+      </div>
+      <div class="pro-bio">
+        <p class="label">bio</p>
+        <p>{{$users->bio}}</p>
+      </div>
     </div>
-    <div class="pro-b">
-      <h2>{{$users->username}}</h2>
-      <h2>{{$users->bio}}</h2>
-    </div>
-    <div class="pro-c">
+    <div class="pro-btn">
       @if(!(Auth::user()==$users))
       <p> @if(auth()->user()->isFollowing($users->id))
       <button type="button" class="btn btn-danger">
