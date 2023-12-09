@@ -54,7 +54,7 @@
         @csrf
         <textarea name="upPost" class="modal_post"></textarea>
         <input type="hidden" name="id" class="modal_id" value="">
-        <input type="image" src="./images/edit.png" alt="編集">
+        <input type="image" src="./images/edit.png" alt="編集" class="modal_img">
       </form>
     </div>
   </div>
