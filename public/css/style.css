@@ -30,14 +30,11 @@ header {
 /* main content */
 #row {
     display: flex;
-    /* flex-flow: row wrap; */
+    flex-flow: row wrap;
 }
 
 #container {
-    flex: 0 0 75%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    flex: 0 0 80%;
 }
 
 /* ヘッダーメニュー */
@@ -93,8 +90,7 @@ header {
     position: absolute;
     z-index: 120;
     width: 87%;
-    left: 15%;
-    top: 10;
+    right: 0;
     /* font-size: 36px; */
 }
 
@@ -112,7 +108,7 @@ header {
     color: #848484;
     padding: 10px 37px;
     text-decoration: none;
-    width: 300px;
+    /* width: 300px; */
 }
 
 /* .accordion-contents ul li:hover {
@@ -165,7 +161,7 @@ header {
 }
 
 #side-bar {
-    flex: 0 0 18%;
+    flex: 0 0 20%;
     border-left: 1px solid #727272;
     /* margin: 0 0 0 auto; */
     /* height: 4000px; */
@@ -187,7 +183,8 @@ header {
 } */
 
 .user_search .btn-primary {
-    margin: 15% 30%;
+    margin-top: 15%;
+    margin-left: 15%;
     width: 154px;
     height: 50px;
     padding: 11px;
