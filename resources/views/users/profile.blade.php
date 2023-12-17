@@ -24,11 +24,9 @@
     <div class="pro-btn">
       @if(!(Auth::user()==$users))
       <p> @if(auth()->user()->isFollowing($users->id))
-      <button type="button" class="btn btn-danger">
-      <a href="{{route('un-follow-pro',['user_id'=> $users->id])}}" class="btn un-follow_btn">フォロー解除</a></button>
+      <a href="{{route('un-follow-pro',['user_id'=> $users->id])}}" class="btn btn-danger un-follow_btn">フォロー解除</a>
       @else
-      <button type="button" class="btn btn-primary">
-      <a href="{{route('follow-pro',['user_id'=> $users->id])}}" class="btn follow_btn">フォローする</a></button>
+      <a href="{{route('follow-pro',['user_id'=> $users->id])}}" class="btn btn-primary follow_btn">フォローする</a>
       @endif</p>
       @endif
     </div>

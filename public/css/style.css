@@ -106,9 +106,9 @@ header {
     display: inline-block;
     background-color: #fff;
     color: #848484;
-    padding: 10px 37px;
+    padding: 10px;
     text-decoration: none;
-    /* width: 300px; */
+    width: 100%;
 }
 
 /* .accordion-contents ul li:hover {
@@ -512,8 +512,6 @@ header {
 
 /* フォローリスト・フォロワーリスト */
 .follow-wrapper {
-    /* margin-top: 10%; */
-    width: 105.5%;
     margin-left: -5%;
 }
 
@@ -534,6 +532,7 @@ header {
     justify-content: space-between;
     gap: 10px;
     margin-left: 4%;
+    margin-top: 1%;
 }
 
 /* プロフィール編集画面 */
