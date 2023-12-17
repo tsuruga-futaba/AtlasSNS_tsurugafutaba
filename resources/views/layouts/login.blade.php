@@ -42,7 +42,11 @@
         <li class="accordion-title js-accordion-title"></li>
         <!-- アイコン -->
         <li class="icon">
-          <img src="{{asset('storage/'.Auth::user()->images)}}">
+          @if (Auth::user()->images == 'icon1.png')
+            <img src="{{asset('/images/icon1.png')}}">
+          @else
+            <img src="{{asset('/storage/'.Auth::user()->images)}}">
+          @endif
         </li>
       </ul>
       <!--アコーディオンメニューの設置-->

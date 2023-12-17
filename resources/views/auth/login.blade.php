@@ -7,10 +7,10 @@
       @csrf
       <p class='welcome'>AtlasSNSへようこそ</p>
       <div class=login-form>
-        <p>{{ Form::label('mail address') }}</p>
-        <p>{{ Form::text('mail',null,['class' => 'input']) }}</p>
-        <p>{{ Form::label('password') }}</p>
-        <p>{{ Form::password('password',['class' => 'input']) }}</p>
+        {{ Form::label('mail address') }}
+        {{ Form::text('mail',null,['class' => 'input']) }}
+        {{ Form::label('password') }}
+        {{ Form::password('password',['class' => 'input']) }}
       </div>
 
       <p class=login-btn>{{ Form::submit('LOGIN',['class'=>'btn btn-danger']) }}</p>

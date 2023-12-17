@@ -16,17 +16,17 @@
     {!! Form::open(['url' => '/register', 'enctype' => 'multipart/form-data']) !!}
     <p class=register>新規ユーザー登録</p>
     <div class=register-form>
-      <p>{{ Form::label('user name') }}</p>
-      <p>{{ Form::text('username',null,['class' => 'input']) }}</p>
+      {{ Form::label('user name') }}
+      {{ Form::text('username',null,['class' => 'input']) }}
 
-      <p>{{ Form::label('mail address') }}</p>
-      <p>{{ Form::text('mail',null,['class' => 'input']) }}</p>
+      {{ Form::label('mail address') }}
+      {{ Form::text('mail',null,['class' => 'input']) }}
 
-      <p>{{ Form::label('password') }}</p>
-      <p>{{ Form::text('password',null,['class' => 'input']) }}</p>
+      {{ Form::label('password') }}
+      {{ Form::password('password',null,['class' => 'input']) }}
 
-      <p>{{ Form::label('password confirm') }}</p>
-      <p>{{ Form::text('password_confirmation',null,['class' => 'input']) }}</p>
+      {{ Form::label('password confirm') }}
+      {{ Form::password('password_confirmation',null,['class' => 'input']) }}
     </div>
     <p class=login-btn>{{ Form::submit('REGISTER',['class'=>'btn btn-danger']) }}</p>
 

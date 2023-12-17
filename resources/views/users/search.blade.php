@@ -18,7 +18,13 @@
     <!-- 自分以外のユーザーを表示 -->
     @if(!(Auth::user()==$user))
     <div class="user-list">
-      <p class="icon"><img src="{{asset('storage/'.$user->images)}}" alt="ユーザーアイコン"></p>
+      <p class="icon">
+        @if ($user->images == 'icon1.png')
+          <img src="{{asset('/images/icon1.png')}}">
+        @else
+          <img src="{{asset('storage/'.$user->images)}}" alt="ユーザーアイコン">
+        @endif
+      </p>
       <p class="username">{{$user->username}}</p>
       <p class="follow-btn">
         @if(auth()->user()->isFollowing($user->id))

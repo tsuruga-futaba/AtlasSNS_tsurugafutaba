@@ -15,21 +15,18 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             ['username'=>'くま',
             'mail'=>'kuma@co.jp',
-            'password'=>'0010',
+            'password'=>bcrypt('728danshi'),
             'bio'=>'森に住んでいます',
-            'images'=>'.../img/kuma.png',
             ],
              ['username'=>'うさぎ',
             'mail'=>'usa@co.jp',
-            'password'=>'0020',
+            'password'=>bcrypt('728danshi'),
             'bio'=>'来週のレース参戦予定',
-            'images'=>'.../img/usagi.png',
             ],
              ['username'=>'たぬき',
             'mail'=>'tanu@co.jp',
-            'password'=>'0030',
+            'password'=>bcrypt('728danshi'),
             'bio'=>'火が怖いです',
-            'images'=>'.../img/tanuki.png',
            ]]);
     }
 }

@@ -31,7 +31,13 @@
     @foreach($posts as $post)
     <div class="post-contents post-list">
       <div class="post-a">
-        <p class="icon"><img src="{{asset('storage/'.$post->user->images)}}"></p >
+        <p class="icon">
+          @if ($post->images == 'icon1.png')
+            <img src="{{asset('/images/icon1.png')}}">
+          @else
+            <img src="{{asset('storage/'.$post->user->images)}}">
+          @endif
+        </p >
       </div>
       <div class="post-b">
         <p>{{$post ->user ->username }}</p>

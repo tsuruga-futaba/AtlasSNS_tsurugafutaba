@@ -13,7 +13,13 @@
     @endif
     {!! Form::open(['url' => '/top','class'=>'form-wrapper']) !!}
     <ul class=post-form>
-      <li class="icon"><img src="{{asset('storage/'.Auth::user()->images)}}"></li>
+      <li class="icon">
+          @if (Auth::user()->images == 'icon1.png')
+            <img src="{{ asset('images/icon1.png') }}" alt="Icon 1">
+          @else
+            <img src="{{asset('/storage/'.Auth::user()->images)}}">
+          @endif
+        </li>
       <li class="post-input">{{ Form::input('textarea','post',null,['placeholder' => '投稿内容を入力してください。','rows' => '3','class'=>'post_input'] )}}</li>
       {{ Form::input('hidden','user_id',Auth::user()->id)}}
       <li class="submit_btn">{{ Form::button('<img src="images/post.png" alt="Submit">',['type'=>'submit'])}}</li>
@@ -24,7 +30,13 @@
       @foreach($list as $list)
       <div class="post-list">
         <div class="post-a">
-          <p class="icon"><img src="{{asset('storage/'.$list->user->images)}}"></p>
+          <p class="icon">
+            @if ($list -> user ->images == 'icon1.png')
+            <img src="{{asset('/images/icon1.png')}}">
+            @else
+            <img src="{{asset('storage/'.$list->user->images)}}">
+            @endif
+          </p>
         </div>
         <div class="post-b">
           <p>{{$list ->user ->username }}</p>
