@@ -3,7 +3,13 @@
 <div class="profile-wrapper">
   <div class="profile-main">
     <div class="pro-icon">
-      <p class="icon"><img src="{{asset('storage/'.$users->images)}}"></p>
+      <p class="icon">
+        @if (Auth::user()->images == 'icon1.png')
+            <img src="{{asset('/images/icon1.png')}}">
+          @else
+            <img src="{{asset('storage/'.$post->user->images)}}">
+          @endif
+        </p>
     </div>
     <div class="pro-name-bio">
       <div class="pro-name">
@@ -32,7 +38,7 @@
     <div class="post-contents post-list">
       <div class="post-a">
         <p class="icon">
-          @if ($post->images == 'icon1.png')
+          @if ($post->user->images == 'icon1.png')
             <img src="{{asset('/images/icon1.png')}}">
           @else
             <img src="{{asset('storage/'.$post->user->images)}}">
